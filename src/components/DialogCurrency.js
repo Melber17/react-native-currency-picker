@@ -29,6 +29,7 @@ export const DialogCurrency = (props) => {
 		showCurrencySymbol = false,
 		showCurrencyNativeSymbol = true,
 		currenciesDataType,
+		withSearch = true,
 	} = props;
 
 	const currencies = Object.values(
@@ -168,18 +169,20 @@ export const DialogCurrency = (props) => {
 					</TouchableOpacity>
 				)}
 			</View>
-			<View style={styles.search}>
-				<View style={[styles.textInputContainer, searchStyle]}>
-					<TextInput
-						autoFocus
-						onChangeText={(text) => handleFilterChange(text)}
-						value={search}
-						placeholder={searchPlaceholder}
-						placeholderTextColor={Colors.textFieldColor}
-						style={[styles.textTitleSmallerWhite, styles.textInput]}
-					/>
+			{withSearch && (
+				<View style={styles.search}>
+					<View style={[styles.textInputContainer, searchStyle]}>
+						<TextInput
+							autoFocus
+							onChangeText={(text) => handleFilterChange(text)}
+							value={search}
+							placeholder={searchPlaceholder}
+							placeholderTextColor={Colors.textFieldColor}
+							style={[styles.textTitleSmallerWhite, styles.textInput]}
+						/>
+					</View>
 				</View>
-			</View>
+			)}
 			<View style={styles.listContainer}>
 				<FlatList
 					keyboardShouldPersistTaps={"handled"}
