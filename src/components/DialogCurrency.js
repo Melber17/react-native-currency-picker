@@ -10,13 +10,12 @@ import {
 import Fuse from "fuse.js";
 import { Colors } from "../styles";
 import data from "../constants/CommonCurrency.json";
+import popularCurrencies from "../constants/CommonCurrency.json";
 import { getStyles } from "./styles";
 import { CurrencyFlag } from "./CurrencyFlag";
 import CrossLightIcon from "../assets/crossLightIcon.svg";
 
 export const DialogCurrency = (props) => {
-	const currencies = Object.values(data);
-
 	const {
 		onSelectItem,
 		title = "Currency",
@@ -29,8 +28,12 @@ export const DialogCurrency = (props) => {
 		showModalTitle = true,
 		showCurrencySymbol = false,
 		showCurrencyNativeSymbol = true,
+		currenciesDataType,
 	} = props;
 
+	const currencies = Object.values(
+		currenciesDataType === "CIS" ? popularCurrencies : data
+	);
 	const [search, setSearch] = useState("");
 	const [listCurrency, setListCurrency] = useState(currencies);
 

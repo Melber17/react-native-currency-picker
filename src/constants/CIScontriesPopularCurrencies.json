@@ -1,0 +1,58 @@
+{
+	"BYN": {
+		"symbol": "BYN",
+		"name": "Belarusian Ruble",
+		"symbol_native": "BYN",
+		"decimal_digits": 0,
+		"rounding": 0,
+		"code": "BYN",
+		"name_plural": "Belarusian rubles"
+	},
+	"EUR": {
+		"symbol": "€",
+		"name": "Euro",
+		"symbol_native": "€",
+		"decimal_digits": 2,
+		"rounding": 0,
+		"code": "EUR",
+		"name_plural": "euros",
+		"popular": true
+	},
+	"RUB": {
+		"symbol": "RUB",
+		"name": "Russian Ruble",
+		"symbol_native": "руб.",
+		"decimal_digits": 2,
+		"rounding": 0,
+		"code": "RUB",
+		"name_plural": "Russian rubles"
+	},
+	"KZT": {
+		"symbol": "KZT",
+		"name": "Kazakhstani Tenge",
+		"symbol_native": "тңг.",
+		"decimal_digits": 2,
+		"rounding": 0,
+		"code": "KZT",
+		"name_plural": "Kazakhstani tenges"
+	},
+	"UAH": {
+		"symbol": "₴",
+		"name": "Ukrainian Hryvnia",
+		"symbol_native": "₴",
+		"decimal_digits": 2,
+		"rounding": 0,
+		"code": "UAH",
+		"name_plural": "Ukrainian hryvnias"
+	},
+	"USD": {
+		"symbol": "$",
+		"name": "US Dollar",
+		"symbol_native": "$",
+		"decimal_digits": 2,
+		"rounding": 0,
+		"code": "USD",
+		"name_plural": "US dollars",
+		"popular": true
+	}
+}
