@@ -14,6 +14,7 @@ export const CurrencyPicker = (props) => {
 		withSearch = true,
 		showSymbol = false,
 		showNativeSymbol = true,
+		showNativeSymbolModal = true,
 		darkMode = true,
 		currenciesData,
 		renderChildren,
@@ -144,7 +145,7 @@ export const CurrencyPicker = (props) => {
 					showCloseButton={showCloseButton}
 					showModalTitle={showModalTitle}
 					showCurrencySymbol={showSymbol}
-					showCurrencyNativeSymbol={showNativeSymbol}
+					showCurrencyNativeSymbol={showNativeSymbolModal}
 					currenciesData={currenciesData}
 				/>
 			</Modal>
