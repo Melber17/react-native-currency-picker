@@ -26,7 +26,6 @@ export const CurrencyPicker = (props) => {
 
 		containerStyle = {},
 		modalStyle = {},
-
 		title,
 		searchPlaceholder,
 		textEmpty,
@@ -161,6 +160,5 @@ const styles = StyleSheet.create({
 	txtCurrencyCode: {
 		...Styles.fontDefault,
 		marginLeft: 10,
-		fontWeight: "600",
 	},
 });
