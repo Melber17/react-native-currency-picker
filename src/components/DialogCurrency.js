@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
 	View,
 	TouchableOpacity,
@@ -14,6 +14,7 @@ import popularCurrencies from "../constants/CISCountriesPopularCurrencies.json";
 import { getStyles } from "./styles";
 import { CurrencyFlag } from "./CurrencyFlag";
 import CrossLightIcon from "../assets/crossLightIcon.svg";
+import { filterCurrenciesData } from "../lib/currency";
 
 export const DialogCurrency = (props) => {
 	const {
@@ -28,15 +29,23 @@ export const DialogCurrency = (props) => {
 		showModalTitle = true,
 		showCurrencySymbol = false,
 		showCurrencyNativeSymbol = true,
-		currenciesDataType,
 		withSearch = true,
+		currenciesData,
 	} = props;
-
-	const currencies = Object.values(
-		currenciesDataType === "CIS" ? popularCurrencies : data
+	const availableCurrencies = Object.values(data);
+	const filteredCurrenciesData = useMemo(
+		() =>
+			currenciesData
+				? filterCurrenciesData(
+						Object.values(currenciesData),
+						availableCurrencies
+				  )
+				: availableCurrencies,
+		[]
 	);
+
 	const [search, setSearch] = useState("");
-	const [listCurrency, setListCurrency] = useState(currencies);
+	const [listCurrency, setListCurrency] = useState(filteredCurrenciesData);
 
 	const { itemStyle = {}, container, searchStyle, tileStyle } = modalStyle;
 
@@ -70,7 +79,7 @@ export const DialogCurrency = (props) => {
 	});
 
 	const fuse = new Fuse(
-		currencies.reduce(
+		filteredCurrenciesData.reduce(
 			(acc, item) => [
 				...acc,
 				{ id: item.code, name: item.name, code: item.code },
@@ -135,12 +144,12 @@ export const DialogCurrency = (props) => {
 
 		let listDataFilter = [];
 		if (value === "") {
-			listDataFilter = currencies;
+			listDataFilter = filteredCurrenciesData;
 		} else {
 			const filteredCountries = fuse.search(value);
 			if (_flatList) _flatList.scrollToOffset({ offset: 0 });
 			filteredCountries.forEach((n) => {
-				const item = currencies.filter(
+				const item = filteredCurrenciesData.filter(
 					(i) => i.code === n.item.code.toString()
 				);
 				if (item.length > 0) listDataFilter.push(item[0]);
