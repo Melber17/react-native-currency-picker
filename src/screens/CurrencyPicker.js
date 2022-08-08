@@ -11,6 +11,7 @@ export const CurrencyPicker = (props) => {
 		currencyCode,
 		showFlag = true,
 		showCurrencyName = true,
+		withSearch = true,
 		showSymbol = false,
 		showNativeSymbol = true,
 		darkMode = true,
@@ -139,6 +140,7 @@ export const CurrencyPicker = (props) => {
 					searchPlaceholder={searchPlaceholder}
 					textEmpty={textEmpty}
 					darkMode={darkMode}
+					withSearch={withSearch}
 					modalStyle={modalStyle}
 					showCloseButton={showCloseButton}
 					showModalTitle={showModalTitle}

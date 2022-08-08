@@ -10,7 +10,6 @@ import {
 import Fuse from "fuse.js";
 import { Colors } from "../styles";
 import data from "../constants/CommonCurrency.json";
-import popularCurrencies from "../constants/CISCountriesPopularCurrencies.json";
 import { getStyles } from "./styles";
 import { CurrencyFlag } from "./CurrencyFlag";
 import CrossLightIcon from "../assets/crossLightIcon.svg";
