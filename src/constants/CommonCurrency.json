@@ -535,7 +535,7 @@
 		"name_plural": "Kuwaiti dinars"
 	},
 	"KZT": {
-		"symbol": "KZT",
+		"symbol": "₸",
 		"name": "Kazakhstani Tenge",
 		"symbol_native": "тңг.",
 		"decimal_digits": 2,
@@ -805,7 +805,7 @@
 		"name_plural": "Serbian dinars"
 	},
 	"RUB": {
-		"symbol": "RUB",
+		"symbol": "₽",
 		"name": "Russian Ruble",
 		"symbol_native": "руб.",
 		"decimal_digits": 2,
