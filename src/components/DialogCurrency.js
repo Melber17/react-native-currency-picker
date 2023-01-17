@@ -58,7 +58,6 @@ export const DialogCurrency = (props) => {
 	} = itemStyle;
 
 	useEffect(() => {
-		StatusBar.setHidden(true);
 		return () => {
 			setSearch("");
 		};
@@ -91,7 +90,6 @@ export const DialogCurrency = (props) => {
 	const onSelect = (item) => {
 		setSearch("");
 		handleFilterChange("");
-		StatusBar.setHidden(false);
 		if (onSelectItem) onSelectItem(item);
 		setVisible(false);
 	};
@@ -169,7 +167,6 @@ export const DialogCurrency = (props) => {
 							setVisible(false);
 							setSearch("");
 							handleFilterChange("");
-							StatusBar.setHidden(false);
 						}}
 						style={styles.searchClose}
 					>
