@@ -30,6 +30,7 @@ export const DialogCurrency = (props) => {
 		showCurrencyNativeSymbol = true,
 		withSearch = true,
 		currenciesData,
+		currencyCode,
 	} = props;
 	const availableCurrencies = Object.values(data);
 	const filteredCurrenciesData = useMemo(
@@ -96,9 +97,16 @@ export const DialogCurrency = (props) => {
 
 	const renderItemTemplate = ({ code, symbol, symbol_native, name }) => {
 		const showSymbol = showCurrencySymbol || showCurrencyNativeSymbol;
+		const isActive = currencyCode === code;
 
 		return (
-			<View style={[styles.item, itemContainer]}>
+			<View
+				style={[
+					styles.item,
+					itemContainer,
+					isActive ? { backgroundColor: "#EEE" } : { backgroundColor: "#FFF" },
+				]}
+			>
 				<CurrencyFlag currency={code} width={flagWidth} />
 				<Text style={[styles.currencyName, currencyCodeStyle]}>{code}</Text>
 				<Text
