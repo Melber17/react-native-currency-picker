@@ -147,10 +147,7 @@ export const DialogCurrency = (props) => {
 	const renderItem = ({ item, index }) => {
 		const isLastItem = listCurrency.length - 1 === index;
 		return (
-			<TouchableOpacity
-				style={{ marginBottom: isLastItem ? 150 : 0 }}
-				onPress={() => onSelect(item)}
-			>
+			<TouchableOpacity onPress={() => onSelect(item)}>
 				{renderItemTemplate(item)}
 			</TouchableOpacity>
 		);
