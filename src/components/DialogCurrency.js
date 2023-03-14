@@ -108,8 +108,14 @@ export const DialogCurrency = (props) => {
 				]}
 			>
 				<CurrencyFlag currency={code} width={flagWidth} />
-				<Text style={[styles.currencyName, currencyCodeStyle]}>{code}</Text>
 				<Text
+					allowFontScaling={false}
+					style={[styles.currencyName, currencyCodeStyle]}
+				>
+					{code}
+				</Text>
+				<Text
+					allowFontScaling={false}
 					style={[
 						styles.commonName,
 						showSymbol && { width: 120 },
@@ -119,10 +125,18 @@ export const DialogCurrency = (props) => {
 					{name}
 				</Text>
 				{showCurrencySymbol && (
-					<Text style={[styles.commonSymbolCode, symbolStyle]}>{symbol}</Text>
+					<Text
+						allowFontScaling={false}
+						style={[styles.commonSymbolCode, symbolStyle]}
+					>
+						{symbol}
+					</Text>
 				)}
 				{showCurrencyNativeSymbol && (
-					<Text style={[styles.commonSymbolCode, symbolNativeStyle]}>
+					<Text
+						allowFontScaling={false}
+						style={[styles.commonSymbolCode, symbolNativeStyle]}
+					>
 						{symbol_native}
 					</Text>
 				)}
@@ -167,7 +181,9 @@ export const DialogCurrency = (props) => {
 		<View style={[styles.container, container]}>
 			<View style={styles.header}>
 				{showModalTitle && (
-					<Text style={[styles.titleModal, tileStyle]}>{title}</Text>
+					<Text allowFontScaling={false} style={[styles.titleModal, tileStyle]}>
+						{title}
+					</Text>
 				)}
 				{showCloseButton && (
 					<TouchableOpacity
@@ -187,6 +203,7 @@ export const DialogCurrency = (props) => {
 					<View style={[styles.textInputContainer, searchStyle]}>
 						<TextInput
 							autoFocus
+							allowFontScaling={false}
 							onChangeText={(text) => handleFilterChange(text)}
 							value={search}
 							placeholder={searchPlaceholder}
@@ -205,7 +222,9 @@ export const DialogCurrency = (props) => {
 					keyExtractor={(item) => item.code}
 					ListEmptyComponent={() => (
 						<View style={styles.listNullContainer}>
-							<Text style={styles.txtEmpty}>{textEmpty}</Text>
+							<Text allowFontScaling={false} style={styles.txtEmpty}>
+								{textEmpty}
+							</Text>
 						</View>
 					)}
 				/>

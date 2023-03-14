@@ -104,22 +104,34 @@ export const CurrencyPicker = (props) => {
 						<View style={{ flexDirection: "row" }}>
 							{showFlag && <CurrencyFlag currency={code} width={flagWidth} />}
 							{showCurrencyCode && (
-								<Text style={[styles.txtCurrencyCode, currencyCodeStyle]}>
+								<Text
+									allowFontScaling={false}
+									style={[styles.txtCurrencyCode, currencyCodeStyle]}
+								>
 									{code}
 								</Text>
 							)}
 							{showCurrencyName && (
-								<Text style={[styles.txtCountryName, currencyNameStyle]}>
+								<Text
+									allowFontScaling={false}
+									style={[styles.txtCountryName, currencyNameStyle]}
+								>
 									{currencyName}
 								</Text>
 							)}
 							{showSymbol && (
-								<Text style={[styles.txtCountryName, symbolStyle]}>
+								<Text
+									allowFontScaling={false}
+									style={[styles.txtCountryName, symbolStyle]}
+								>
 									{symbol}
 								</Text>
 							)}
 							{showNativeSymbol && (
-								<Text style={[styles.txtCountryName, symbolNativeStyle]}>
+								<Text
+									allowFontScaling={false}
+									style={[styles.txtCountryName, symbolNativeStyle]}
+								>
 									{symbolNative}
 								</Text>
 							)}
