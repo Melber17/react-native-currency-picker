@@ -124,22 +124,6 @@ export const DialogCurrency = (props) => {
 				>
 					{name}
 				</Text>
-				{showCurrencySymbol && (
-					<Text
-						allowFontScaling={false}
-						style={[styles.commonSymbolCode, symbolStyle]}
-					>
-						{symbol}
-					</Text>
-				)}
-				{showCurrencyNativeSymbol && (
-					<Text
-						allowFontScaling={false}
-						style={[styles.commonSymbolCode, symbolNativeStyle]}
-					>
-						{symbol_native}
-					</Text>
-				)}
 			</View>
 		);
 	};
